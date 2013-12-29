@@ -1,0 +1,6 @@
+name: Texas Torque Build Blog
+markdown: redcarpet
+pygments: true
+port: 8888
+detach: false
+permalink: pretty

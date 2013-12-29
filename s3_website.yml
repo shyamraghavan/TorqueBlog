@@ -1,0 +1,8 @@
+---
+s3_id: AKIAIQSIX4S3O4GQDUMQ
+s3_secret: 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
+s3_bucket: blog.texastorque.org
+max_age:
+  assets/*: 6000
+  '*': 300
+cloudfront_distribution_id: E77RX056BA8IW
