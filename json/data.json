@@ -1,0 +1,17 @@
+{
+  "name": "robot",
+  "children": [
+    {
+      "name": "manipulator",
+      "size": 100
+    },
+    {
+      "name": "drivebase",
+      "size": 100
+    },
+    {
+      "name": "end-game",
+      "size": 100
+    }
+  ]
+}

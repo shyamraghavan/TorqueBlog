@@ -1,6 +1,8 @@
-name: Texas Torque Build Blog
+name: TEXAS TORQUE BUILD BLOG
 markdown: redcarpet
 pygments: true
 port: 8888
 detach: false
 permalink: pretty
+lunr_search: 
+  min_length: 1

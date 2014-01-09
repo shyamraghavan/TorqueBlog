@@ -3,42 +3,93 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
         <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
 
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
 
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="/css/bootstrap.css">
+
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
 
-    </head>
-    <body>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        {% contentblock prescripts %}
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
-
-          {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Texas Torque<br />
-                A World Champion FIRST Robotics Team<br />
-                contactus@texastorque.org
-              </p>
+        <div class="jumbotron" id="top-jumbotron">
+          <div class="container">
+            <div class="col-md-1" >
+              <a href="/"><img src="/assets/1477-Logo-White.png" class="img-responsive" id="logo-top-left"></a>
             </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/shyamraghavan">github.com/shyamraghavan</a><br />
-                <a href="https://twitter.com/shyamraghavan1">twitter.com/shyamraghavan1</a><br />
-              </p>
+            <div class="col-md-11">
+              <h1 class="site-name" href="/">
+                {% if page.jumbo-name != nil %}
+                  {{ page.jumbo-name }}
+                {% endif %}
+                {% if page.jumbo-name == nil %}
+                  {{ page.title }}
+                {% endif %}
+              </h1>
+              <p class="site-branding">{{ page.jumbo-branding }}</p>
             </div>
           </div>
         </div>
+
+        <nav class="navbar navbar-inverse" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Texas Torque Build Blog</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/search/">Search</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Weeks<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  {% for tag in site.tags %}
+                    <li><a href="{{ tag.url }}">{{ tag[0] }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://texastorque.org/about-us">About</a></li>
+              <li><a href="http://texastorque.org/join-us">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+
+    </head>
+    <body>
+      
+      {% contentblock scripts %}
+
+      <div class="site">
+
+        {{ content }}
+
+        <!--<div class="footer">
+          <div class="contact">
+            <p>
+              Designed and Maintained by Shyam Raghavan, an alumnus of FRC Team 1477
+            </p>
+          </div>
+        </div>-->
+      </div>
+
+      <script src="/js/waypoints.js"></script>
+      <script src="/js/waypoints-sticky.js"></script>
+      <script type="text/javascript" src="/js/main.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
 
     </body>
 </html>

@@ -3,6 +3,8 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2013-12-28 01:40:54
 categories: jekyll update
+parent: robot
+tags: Week-0
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
@@ -10,7 +12,7 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 Jekyll also offers powerful support for code snippets:
 
-{% highlight python %}
+{% highlight python linenos%}
 def print_hi(name):
   print "Hi, ", name
 end

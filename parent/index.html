@@ -1,0 +1,21 @@
+---
+layout: default
+jumbo-branding: All posts.
+title: PARENT
+---
+
+
+
+{% contentfor scripts %}
+	<script type="text/javascript">
+		function getParameterByName(name) {
+		    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+		    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+		        results = regex.exec(location.search);
+		    return results == null ? "" : results[1];
+		}
+
+		$('.site-name').text(getParameterByName("q"));
+		$('.site-branding').text("All posts regarding decision points of " + getParameterByName("q") + ".");
+	</script>
+{% endcontentfor %}

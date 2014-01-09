@@ -1,13 +1,15 @@
 ---
 layout: default
-title: Your New Jekyll Site
+jumbo-name: TEXAS TORQUE BUILD BLOG
+jumbo-branding: An internal blog among members of FIRST Robotics Competition Team 1477 from The Woodlands, TX.
+title: Texas Torque Build Blog
 ---
 
 <div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+  <script type="text/javascript" src="/js/visualization.js"></script>
 </div>
+
+{% contentfor scripts %}
+  <script type="text/javascript" src="/js/d3.js"></script>
+  <script type="text/javascript" src="/js/d3.layout.js"></script>
+{% endcontentfor %}
